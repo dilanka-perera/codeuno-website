@@ -38,7 +38,22 @@ export interface TcpiCollection {
   tcpis: Tcpi[];
 }
 
-export type SectionItem = Paragraph | TcpiCollection;
+export interface HoverCard {
+  slug: string;
+  title: string;
+  description: string;
+  image: ImageAsset;
+  themeColour: Color;
+}
+
+export interface HoverCardCollection {
+  __typename: "HoverCardCollection";
+  id: string;
+  slug: string;
+  hoverCards: HoverCard[];
+}
+
+export type SectionItem = Paragraph | TcpiCollection | HoverCardCollection;
 
 export interface Section {
   slug: string;

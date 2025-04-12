@@ -1,6 +1,7 @@
 import { Section as SectionType } from "@/types/hygraph";
 import Paragraph from "@/components/Paragraph";
-import TcpiCollection from "@/components/Tcpi";
+import TcpiCollection from "@/components/TcpiCollection";
+import HoverCardCollection from "./HoverCardCollection";
 
 interface SectionProps {
   section: SectionType;
@@ -9,6 +10,7 @@ interface SectionProps {
 const Section = ({ section }: SectionProps) => {
   return (
     <div
+      id={section.slug}
       className="pt-10"
       style={{
         backgroundColor: section.backgroundColour.hex,
@@ -16,7 +18,7 @@ const Section = ({ section }: SectionProps) => {
       }}
     >
       <div className="max-w-[1280px] mx-auto overflow-hidden px-6 md:px-10 text-center">
-        <h2 className="font-[orbitron] pb-5 px-10 text-[24px] sm:text-[32px] lg:text-[40px] font-bold text-center">
+        <h2 className="font-[orbitron] pb-5 text-[24px] sm:text-[32px] lg:text-[40px] font-bold text-center">
           {section.title}
         </h2>
 
@@ -32,6 +34,12 @@ const Section = ({ section }: SectionProps) => {
               return (
                 <div key={item.slug} className="pb-10">
                   <TcpiCollection tcpiCollection={item} />
+                </div>
+              );
+            case "HoverCardCollection":
+              return (
+                <div key={item.slug} className="pb-10">
+                  <HoverCardCollection hoverCardCollection={item} />
                 </div>
               );
             default:

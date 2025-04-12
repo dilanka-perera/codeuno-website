@@ -8,5 +8,7 @@ export default function HomePage() {
 
   if (!website) return <p>Loading...</p>;
 
+  console.log(website);
+
   return <PageLayout page={website.homePage} />;
 }

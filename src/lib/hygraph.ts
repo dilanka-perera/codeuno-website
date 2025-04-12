@@ -76,6 +76,21 @@ const WEBSITE_QUERY = gql`
             }
           }
         }
+        ... on HoverCardCollection {
+          id
+          slug
+          hoverCards {
+            slug
+            title
+            description
+            image {
+              ...ImageFields
+            }
+            themeColour {
+              hex
+            }
+          }
+        }
       }
     }
     backgroundColour {
