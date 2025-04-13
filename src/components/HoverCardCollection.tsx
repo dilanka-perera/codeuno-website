@@ -14,8 +14,9 @@ const HoverCardCollection: React.FC<HoverCardCollectionProps> = ({
       {hoverCardCollection.hoverCards.map((card) => (
         <div
           key={card.slug}
-          className="relative group overflow-hidden h-[360px] w-full sm:w-[48%] lg:w-[31%] transition-transform duration-300 hover:scale-[1.02] rounded-2xl shadow-md"
+          className="relative group overflow-hidden h-[280px] w-full sm:w-[47%] md:w-[30%] lg:w-[23%] transition-transform duration-300 hover:scale-[1.02] rounded-2xl shadow-md"
         >
+          {/* Image */}
           <Image
             src={card.image.url}
             alt={card.title}
@@ -27,28 +28,28 @@ const HoverCardCollection: React.FC<HoverCardCollectionProps> = ({
 
           {/* Theme-colored overlay */}
           <div
-            className="absolute inset-0 opacity-0 group-hover:opacity-80 transition-opacity"
+            className="absolute inset-0 opacity-20 group-hover:opacity-80 transition-opacity duration-1000"
             style={{ backgroundColor: card.themeColour.hex }}
           />
 
           {/* Gradient overlay */}
           <div
-            className="absolute inset-0 bg-gradient-to-t via-transparent to-transparent"
+            className="absolute inset-0"
             style={{
               backgroundImage: `linear-gradient(to top, ${card.themeColour.hex}, transparent, transparent)`,
             }}
-          ></div>
+          />
 
           {/* Title */}
           <div className="absolute bottom-0 left-0 right-0 p-4">
-            <h2 className="text-white font-medium group-hover:translate-y-[-280px] transition-transform duration-1000 ease-in-out">
+            <h2 className="font-medium text-white text-[18px] sm:text-[16px] xl:text-[18px] transform transition-transform duration-1000 ease-in-out group-hover:-translate-y-46">
               {card.title}
             </h2>
           </div>
 
           {/* Description */}
-          <div className="absolute bottom-0 left-0 right-0 p-4 transform translate-y-full opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-1000 ease-in-out">
-            <p className="text-white">{card.description}</p>
+          <div className="text-[16px] sm:text-[14px] xl:text-[16px] absolute bottom-0 left-0 right-0 p-4 transform translate-y-full opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-1000 ease-in-out text-white">
+            <p>{card.description}</p>
           </div>
         </div>
       ))}

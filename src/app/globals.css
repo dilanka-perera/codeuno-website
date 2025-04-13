@@ -6,6 +6,8 @@
 @tailwind components;
 @tailwind utilities;
 
+@custom-variant hover (&:hover);
+
 button,
 [role="button"],
 .cursor-pointer {

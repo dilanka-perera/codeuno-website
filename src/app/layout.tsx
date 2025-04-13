@@ -30,7 +30,10 @@ export default async function RootLayout({
   const { website } = await getWebsiteData();
 
   return (
-    <html lang="en" className={`${roboto.variable} ${orbitron.variable}`}>
+    <html
+      lang="en"
+      className={`${roboto.variable} ${orbitron.variable} touch-manipulation touch-auto`}
+    >
       <body className="bg-slate-100">
         <DataProvider website={website}>
           <Header />
