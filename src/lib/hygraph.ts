@@ -91,10 +91,31 @@ const WEBSITE_QUERY = gql`
             }
           }
         }
+        ... on TechStackCollection {
+          id
+          slug
+          techStacks {
+            slug
+            techs(first: 100) {
+              ...TechFields
+            }
+          }
+          cardColour {
+            hex
+          }
+        }
       }
     }
     backgroundColour {
       hex
+    }
+  }
+
+  fragment TechFields on Tech {
+    slug
+    techName
+    logo {
+      ...ImageFields
     }
   }
 

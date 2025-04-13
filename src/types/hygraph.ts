@@ -53,7 +53,30 @@ export interface HoverCardCollection {
   hoverCards: HoverCard[];
 }
 
-export type SectionItem = Paragraph | TcpiCollection | HoverCardCollection;
+export interface Tech {
+  slug: string;
+  techName: string;
+  logo: ImageAsset;
+}
+
+export interface TechStack {
+  slug: string;
+  techs: Tech[];
+}
+
+export interface TechStackCollection {
+  __typename: "TechStackCollection";
+  id: string;
+  slug: string;
+  techStacks: TechStack[];
+  cardColour: Color;
+}
+
+export type SectionItem =
+  | Paragraph
+  | TcpiCollection
+  | HoverCardCollection
+  | TechStackCollection;
 
 export interface Section {
   slug: string;

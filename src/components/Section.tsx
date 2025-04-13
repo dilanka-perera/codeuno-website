@@ -1,7 +1,8 @@
 import { Section as SectionType } from "@/types/hygraph";
 import Paragraph from "@/components/Paragraph";
 import TcpiCollection from "@/components/TcpiCollection";
-import HoverCardCollection from "./HoverCardCollection";
+import HoverCardCollection from "@/components/HoverCardCollection";
+import TechStackCollection from "@/components/TechStackCollection";
 
 interface SectionProps {
   section: SectionType;
@@ -40,6 +41,12 @@ const Section = ({ section }: SectionProps) => {
               return (
                 <div key={item.slug} className="pb-10">
                   <HoverCardCollection hoverCardCollection={item} />
+                </div>
+              );
+            case "TechStackCollection":
+              return (
+                <div key={item.slug} className="pb-10">
+                  <TechStackCollection techStackCollection={item} />
                 </div>
               );
             default:
