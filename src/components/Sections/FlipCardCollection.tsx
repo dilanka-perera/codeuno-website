@@ -1,22 +1,23 @@
 import React from "react";
-import { HoverCardCollection as HoverCardCollectionType } from "@/types/hygraph";
+import { FlipCardCollection as FlipCardCollectionType } from "@/types/hygraph";
 import Image from "next/image";
 
-interface HoverCardCollectionProps {
-  hoverCardCollection: HoverCardCollectionType;
+interface FlipCardCollectionProps {
+  flipCardCollection: FlipCardCollectionType;
 }
 
-const HoverCardCollection: React.FC<HoverCardCollectionProps> = ({
-  hoverCardCollection,
+const FlipCardCollection: React.FC<FlipCardCollectionProps> = ({
+  flipCardCollection,
 }) => {
   return (
     <div className="flex flex-wrap justify-center gap-6">
-      {hoverCardCollection.hoverCards.map((card) => (
+      {flipCardCollection.flipCards.map((card) => (
         <div
           key={card.slug}
-          className="group h-[280px] w-full sm:w-[47%] md:w-[30%] lg:w-[23%] [perspective:1000px]"
+          className="group h-[280px] w-full sm:w-[47%] md:w-[30%] lg:w-[23%] max-w-[400px] [perspective:1000px]"
         >
           <div className="relative h-full w-full rounded-xl shadow-xl transition-all duration-500 [transform-style:preserve-3d] group-hover:[transform:rotateY(180deg)]">
+            {/* Front Face */}
             <div className="absolute inset-0 h-full w-full rounded-xl [backface-visibility:hidden]">
               <Image
                 src={card.image.url}
@@ -39,7 +40,9 @@ const HoverCardCollection: React.FC<HoverCardCollectionProps> = ({
               </div>
             </div>
 
+            {/* Back Face */}
             <div className="absolute inset-0 h-full w-full rounded-xl px-4 text-center text-slate-200 [transform:rotateY(180deg)] [backface-visibility:hidden]">
+              {/* Overlay with theme color */}
               <div
                 className="absolute inset-0 rounded-xl"
                 style={{
@@ -63,4 +66,4 @@ const HoverCardCollection: React.FC<HoverCardCollectionProps> = ({
   );
 };
 
-export default HoverCardCollection;
+export default FlipCardCollection;

@@ -38,7 +38,7 @@ export interface TcpiCollection {
   tcpis: Tcpi[];
 }
 
-export interface HoverCard {
+export interface FlipCard {
   slug: string;
   title: string;
   description: string;
@@ -46,11 +46,11 @@ export interface HoverCard {
   themeColour: Color;
 }
 
-export interface HoverCardCollection {
-  __typename: "HoverCardCollection";
+export interface FlipCardCollection {
+  __typename: "FlipCardCollection";
   id: string;
   slug: string;
-  hoverCards: HoverCard[];
+  flipCards: FlipCard[];
 }
 
 export interface Tech {
@@ -75,7 +75,7 @@ export interface TechStackCollection {
 export type SectionItem =
   | Paragraph
   | TcpiCollection
-  | HoverCardCollection
+  | FlipCardCollection
   | TechStackCollection;
 
 export interface Section {

@@ -79,10 +79,10 @@ const WEBSITE_QUERY = gql`
             }
           }
         }
-        ... on HoverCardCollection {
+        ... on FlipCardCollection {
           id
           slug
-          hoverCards {
+          flipCards {
             slug
             title
             description
