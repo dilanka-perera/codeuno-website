@@ -66,3 +66,7 @@ button,
 .slick-dots li.slick-active button:before {
   background-color: #facc15; /* Tailwind's yellow-400 */
 }
+
+p {
+  margin-bottom: 1rem;
+}

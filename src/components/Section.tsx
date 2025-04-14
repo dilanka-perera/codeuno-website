@@ -1,8 +1,8 @@
 import { Section as SectionType } from "@/types/hygraph";
-import Paragraph from "@/components/Paragraph";
-import TcpiCollection from "@/components/TcpiCollection";
-import HoverCardCollection from "@/components/HoverCardCollection";
-import TechStackCollection from "@/components/TechStackCollection";
+import Paragraph from "@/components/Sections/Paragraph";
+import TcpiCollection from "@/components/Sections/TcpiCollection";
+import HoverCardCollection from "@/components/Sections/HoverCardCollection";
+import TechStackCollection from "@/components/Sections/TechStackCollection";
 
 interface SectionProps {
   section: SectionType;

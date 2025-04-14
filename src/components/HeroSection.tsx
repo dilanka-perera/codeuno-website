@@ -1,5 +1,5 @@
 import { HeroSection } from "@/types/hygraph";
-import Carousal from "@/components/Carousal";
+import Carousal from "@/components/HeroSections/Carousal";
 
 interface HeroSectionProps {
   heroSection: HeroSection;

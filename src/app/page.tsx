@@ -1,12 +1,8 @@
-"use client";
-
 import PageLayout from "@/components/PageLayout";
-import { useData } from "@/context/DataContext";
+import { getWebsiteData } from "@/lib/hygraph";
 
-export default function HomePage() {
-  const { website } = useData();
-
-  if (!website) return <p>Loading...</p>;
+export default async function HomePage() {
+  const { website } = await getWebsiteData();
 
   return <PageLayout page={website.homePage} />;
 }

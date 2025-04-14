@@ -114,6 +114,7 @@ export interface Website {
   headerLogo: ImageAsset;
   footerLogo: ImageAsset;
   homePage: Page;
+  pages: Page[];
 }
 
 export interface WebsiteQueryResponse {

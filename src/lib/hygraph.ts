@@ -15,6 +15,9 @@ const WEBSITE_QUERY = gql`
       homePage {
         ...PageFields
       }
+      pages {
+        ...PageFields
+      }
     }
   }
 
