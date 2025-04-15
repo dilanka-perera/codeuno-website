@@ -100,7 +100,15 @@ export interface Carousal {
   carousalItems: CarousalItem[];
 }
 
-export type HeroSection = Carousal | null;
+export interface HeroBanner {
+  __typename: "HeroBanner";
+  slug: string;
+  title: string;
+  description: string;
+  image: ImageAsset;
+}
+
+export type HeroSection = Carousal | HeroBanner | null;
 
 export interface Page {
   slug: string;

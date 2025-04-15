@@ -37,6 +37,14 @@ const WEBSITE_QUERY = gql`
           }
         }
       }
+      ... on HeroBanner {
+        slug
+        title
+        description
+        image {
+          ...ImageFields
+        }
+      }
     }
     sections {
       slug

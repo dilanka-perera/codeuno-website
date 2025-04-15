@@ -2,14 +2,14 @@
 
 import Slider from "react-slick";
 import Image from "next/image";
-import { CarousalItem } from "@/types/hygraph";
+import { Carousal as CarousalType } from "@/types/hygraph";
 
 type CarousalProps = {
-  items: CarousalItem[];
+  carousal: CarousalType;
 };
 
-const Carousal = ({ items }: CarousalProps) => {
-  if (items.length === 0) return null;
+const Carousal = ({ carousal }: CarousalProps) => {
+  if (carousal.carousalItems.length === 0) return null;
 
   const settings = {
     dots: true,
@@ -26,7 +26,7 @@ const Carousal = ({ items }: CarousalProps) => {
   return (
     <div className="relative max-w-[1920px] mx-auto w-full overflow-hidden h-[350px] sm:h-[480px] lg:h-[720px]">
       <Slider {...settings}>
-        {items.map((item) => (
+        {carousal.carousalItems.map((item) => (
           <div
             key={item.slug}
             className="relative w-full h-[350px] sm:h-[480px] lg:h-[720px]"

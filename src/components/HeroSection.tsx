@@ -1,5 +1,6 @@
 import { HeroSection } from "@/types/hygraph";
 import Carousal from "@/components/HeroSections/Carousal";
+import HeroBanner from "./HeroSections/HeroBanner";
 
 interface HeroSectionProps {
   heroSection: HeroSection;
@@ -10,12 +11,9 @@ const HeroSectionComponent = ({ heroSection }: HeroSectionProps) => {
 
   switch (heroSection.__typename) {
     case "Carousal":
-      return <Carousal items={heroSection.carousalItems} />;
-
-    // Future types can go here
-    // case "HeroBanner":
-    //   return <HeroBanner data={heroSection} />;
-
+      return <Carousal carousal={heroSection} />;
+    case "HeroBanner":
+      return <HeroBanner heroBanner={heroSection} />;
     default:
       return null;
   }
